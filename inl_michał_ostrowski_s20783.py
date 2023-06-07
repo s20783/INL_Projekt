@@ -86,3 +86,14 @@ test_accuracy = accuracy_score(test_df.iloc[:,1].tolist(), test_predictions)
 
 print("Test F1-Score:", test_f1)
 print("Test Accuracy:", test_accuracy)
+
+def sprawdz_forme(text):
+  predictions, raw_outputs = model.predict([text])
+  return predictions
+
+user_input = input("Wpisz słowo: ")
+out = sprawdz_forme(user_input)
+if(out == [0]):
+  print("Forma męska")
+else:
+  print("Forma żeńska")
